@@ -1,0 +1,20 @@
+ <br/><br/><br/><br/><br/><br/>
+    <h1 style= "text-align:center"><font color="#FFFFFF"><font size = 50px><font face="arial"><strong> Lookup a single crypto currency</font></strong></font><font color="#4cd4db"><strong>.</strong></font></h1>
+    <br/><br/><br/><br/>
+    
+<%= form_tag home_lookup_path, :method => 'POST' do %>
+<div class = "form-group">
+<%= text_field_tag 'sym', nil, placeholder: "Enter crypto symbol", size: 50, class: 'form-control' %>
+<br/>
+<%= submit_tag 'Lookup crypto', class: "btn btn-info" %>
+</div>
+<% end %>
+
+
+<% if @symbol %>
+<% for x in @lookup_coin %>
+ <% if @symbol == x["symbol"] %>
+  <%= x["name"] %>: <%= x["price_usd"] %>
+<% end %>
+  <% end %>
+<% end %>

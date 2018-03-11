@@ -1,0 +1,15 @@
+
+ <br/><br/><br/><br/><br/><br/>
+    <h1 style= "text-align:center"><font color="#FFFFFF"><font size = "80px"><font face="arial"><strong> Cryptoflo</font></strong></font><font color="#4cd4db"><strong>.</strong></font></font></h1>
+    <h1 style= "text-align:center"><font color="#FFFFFF"><font size = 50px><font face="arial"><strong> A simple portfolio to list all your crypto currencies</font></strong></font><font color="#4cd4db"><strong>.</strong></font></h1>
+    <br/><br/><br/><br/>
+    
+<%= form_tag home_index_path, :method => 'POST' do %>
+<div class = "form-group">
+<%= text_field_tag 'sym', nil, placeholder: "Enter crypto symbol", size: 50, class: 'form-control' %>
+<br/>
+<%= submit_tag 'Lookup crypto', class: "btn btn-info" %>
+</div>
+<% end %>
+
+<%= @coins %>
